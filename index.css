@@ -115,7 +115,7 @@ input {
   line-height: 1.2;
 }
 
-.section-heading p:last-child {
+.section-heading p {
   margin: 0;
   color: var(--muted);
   font-family: "Segoe UI", Arial, sans-serif;
