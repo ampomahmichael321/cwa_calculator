@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CWA Planning Calculator</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <main class="page-shell">
+      <header class="app-header">
+        <div class="brand-mark" aria-hidden="true">
+          <span>C</span>
+        </div>
+        <div>
+          <p class="eyebrow">Academic planning</p>
+          <h1>CWA Calculator</h1>
+        </div>
+      </header>
+
+      <section class="calculator" aria-labelledby="calculator-title">
+        <div class="form-panel">
+          <div class="section-heading">
+            <p class="step-label">Step 1</p>
+            <h2 id="calculator-title">Enter academic details</h2>
+            <p>Use the totals from your most recent academic record.</p>
+          </div>
+
+          <form class="calculator-form" action="#" method="get">
+            <fieldset>
+              <legend>Previous performance</legend>
+
+              <div class="field-grid">
+                <div class="field">
+                  <label for="cumulativeCredits">Cumulative credits</label>
+                  <div class="input-wrap">
+                    <input
+                      type="number"
+                      id="cumulativeCredits"
+                      name="cumulativeCredits"
+                      min="0"
+                      step="1"
+                      value="0"
+                      required
+                    />
+                    <span>credits</span>
+                  </div>
+                </div>
+
+                <div class="field">
+                  <label for="cumScore">Cumulative score</label>
+                  <div class="input-wrap">
+                    <input
+                      type="number"
+                      id="cumScore"
+                      name="cumScore"
+                      min="0"
+                      step="1"
+                      value="0"
+                      required
+                    />
+                    <span>points</span>
+                  </div>
+                  <small>Total weighted score from past semesters</small>
+                </div>
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <legend>Current semester</legend>
+
+              <div class="field-grid">
+                <div class="field">
+                  <label for="numOfSemCourses">Number of courses</label>
+                  <input
+                    type="number"
+                    id="numOfSemCourses"
+                    name="numOfSemCourses"
+                    min="1"
+                    step="1"
+                    value="0"
+                    required
+                  />
+                </div>
+
+                <div class="field">
+                  <label for="totalSemCredits">Total semester credits</label>
+                  <div class="input-wrap">
+                    <input
+                      type="number"
+                      id="totalSemCredits"
+                      name="totalSemCredits"
+                      min="1"
+                      step="1"
+                      value="0"
+                      required
+                    />
+                    <span>credits</span>
+                  </div>
+                </div>
+
+                <div class="field field-wide">
+                  <label for="targetCwa">Target CWA</label>
+                  <div class="input-wrap">
+                    <input
+                      type="number"
+                      id="targetCwa"
+                      name="targetCwa"
+                      min="0"
+                      max="100"
+                      step="0.01"
+                      value="0"
+                      required
+                    />
+                    <span>%</span>
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+
+            <button type="submit" class="calculate-button">
+              Calculate required average
+              <span aria-hidden="true">&#8594;</span>
+            </button>
+          </form>
+        </div>
+
+        <aside class="result-panel" aria-labelledby="result-title">
+          <p class="step-label light">Your target</p>
+          <h2 id="result-title">Required average</h2>
+
+          <div class="score-display">
+            <strong>--</strong>
+            <span>out of 100</span>
+          </div>
+
+          <div class="result-details">
+            <div>
+              <span>Target CWA</span>
+              <strong>70%</strong>
+            </div>
+            <div>
+              <span>Semester credits</span>
+              <strong>21</strong>
+            </div>
+          </div>
+
+          <p class="result-note"></p>
+        </aside>
+      </section>
+    </main>
+
+    <script src="calculator.js"></script>
+  </body>
+</html>
