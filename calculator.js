@@ -18,12 +18,6 @@ const totalSemCreditsInput = document.querySelector("#totalSemCredits");
 const targetCwaInput = document.querySelector("#targetCwa");
 const cumScoreInput = document.querySelector("#cumScore");
 const averageDisplay = document.querySelector(".score-display strong");
-const targetCwaDisplay = document.querySelector(
-  ".result-details div:first-child strong",
-);
-const semesterCreditsDisplay = document.querySelector(
-  ".result-details div:nth-child(2) strong",
-);
 const resultNote = document.querySelector(".result-note");
 calculatorForm.addEventListener("submit", function (event) {
   event.preventDefault();
@@ -37,8 +31,6 @@ calculatorForm.addEventListener("submit", function (event) {
   const plan = calculatePlan();
 
   averageDisplay.textContent = plan.averageScore;
-  targetCwaDisplay.textContent = `${targetCwa}%`;
-  semesterCreditsDisplay.textContent = totalSemCredits;
   resultNote.textContent = `You need an average score of ${plan.averageScore} in every course to achieve your target CWA of ${targetCwa}% for this semester.`;
 
   console.log(`You need an average score of ${plan.averageScore}`);
